@@ -39,7 +39,12 @@ class SampleContainer extends React.Component{
             name: 'Pedal Hi-hat', 
             isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
         }
-    ]
+    ], instrumentObj: [{
+            id: 458,
+            name: "Violin",
+            isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+        }]
+        
     }
 
     showDrums = () => {
@@ -57,12 +62,26 @@ class SampleContainer extends React.Component{
         this.midiSounds.playDrumsNow([drum_id])
     }
 
+    playInstrument = (instrument_id) => {
+        this.midiSounds.playChordNow(instrument_id, [60], 0.5);
+    }
+
     getDrumObjButtons = () => {
         return this.state.drumObjs.map((drumObj, index) => {
             let drumIndex = index
             let drum = drumObj
             return drumObj.isPlaying.map((beat, index) => {
-                return <Button key={drum.name + index} id={drum.id} drumIndex={drumIndex} beatIndex={index} togglePlaying={this.togglePlaying} drumObj={drum} playDrum={this.playDrum}/>
+                return <Button key={drum.name + index} id={drum.id} sampleIndex={drumIndex} beatIndex={index} togglePlaying={this.togglePlaying} sampleObj={drum} playDrum={this.playDrum}/>
+            })
+        })
+    }
+
+    getInstrumentObjButtons = () => {
+        return this.state.instrumentObj.map((instrumentObj, index) => {
+            let instrumentIndex = index
+            let instrument = instrumentObj
+            return instrumentObj.isPlaying.map((beat, index) => {
+                return <Button key={instrument.name + index} id={instrument.id} sampleIndex={instrumentIndex} beatIndex={index} togglePlaying={this.togglePlaying} sampleObj={instrument} playDrum={this.playInstrument}/>
             })
         })
     }
@@ -73,13 +92,12 @@ class SampleContainer extends React.Component{
                 <MIDISounds 
                 ref={(ref) => (this.midiSounds = ref)}
                 appElementName="root" 
-                // commented out instruments, but could be useful to add synth parts/basslines, etc.
-                // left it commented in case we decide to add that later.
-	            // instruments={[]} 
+	            instruments={[458]} 
                 drums={this.state.drums}
                 />
                 {/* {this.showDrums} */}
                 {this.getDrumObjButtons()}
+                {this.getInstrumentObjButtons()}
             </>
 
         )
