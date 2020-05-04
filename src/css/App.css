@@ -1,8 +1,25 @@
+@font-face {
+  font-family: 'lcdnormal';
+  src: url('./fonts/lcd-n___-webfont.woff2') format('woff2'),
+       url('./fonts/lcd-n___-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'tr-909regular';
+  src: url('./fonts/tr-909-webfont.woff2') format('woff2'),
+       url('./fonts/tr-909-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   text-align: center;
 }
 
 .drumblr {
+  /* border: 2px solid red; */
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -14,23 +31,36 @@
 }
 
 .HeaderContainer {
+  /* border: 2px solid red; */
   display: flex;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 40px;
   height: 275px;
-  width: 90%;
+  width: 95%;
   background: #000000;
   box-shadow: inset 0 1px 3px 0 rgba(255,255,255,0.50);
 }
 
-.DisplayContainer {
+.Logo {
+  /* border: 2px solid red; */
+  order:1;
   display: flex;
+  margin: auto;
+  margin-top: 30px;
+  /* height: 100%; */
+  font-family: 'tr-909regular';
+  font-size: 30px;
+  color: #BBC5CF;
+  text-align: left;
 }
 
-.LCDContainer {
+.DisplayContainer {
+  /* border: 2px solid red; */
+  order: 2;
   display: flex;
+  margin: auto;
   margin-top: 40px;
-  margin-left: 170px;
+  /* margin-left: 170px; */
   height: 175px;
   width: 400px;
   background-image: linear-gradient(180deg, #5CB547 0%, #4C9038 100%);
@@ -38,12 +68,48 @@
   border-radius: 8px;
 }
 
+.Sample {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 45%;
+  margin-top: 5px;
+  /* margin: auto; */
+  border: 3px solid #000000;
+  font-family: 'tr-909regular';
+}
+
+.Tempo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 45%;
+  margin-bottom: 5px;
+  /* margin: auto; */
+  border: 3px solid #000000;
+  font-family: 'lcdnormal';
+}
+
+.Status {
+  display: flex;
+  width: 95%;
+  height: 90%;
+  margin: auto;
+  border: 3px solid #000000;
+  font-family: 'lcdnormal';
+  font-size: 42px;
+  align-items: center;
+  padding-left: 0em;
+}
+
 .DialContainer {
+  /* border: 2px solid red; */
+  order: 3;
   height: 175px;
   width: 175px;
   margin: auto;
   margin-top: 40px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
   background-image: linear-gradient(180deg, #38393D 0%, #0D1216 100%);
   border: 5px solid #9AA4AD;
   border-radius: 50%;
@@ -60,11 +126,20 @@
   border-radius: 50%;
 }
 
+.BtnLabel {
+  height: 75px;
+  width: 100px;
+  background-image: linear-gradient(0deg, rgba(216,216,216,0.00) 59%, #212227 59%);
+  border: 2px solid #282C2F;
+  border-radius: 9px;
+}
+
 .NavBar {
 
 }
 
 .TempContainer {
+  /* border: 2px solid red; */
   display: flex;
   margin: auto;
   margin-top: 0px;
@@ -86,6 +161,7 @@
 }
 
 .FooterContainer {
+  /* border: 2px solid red; */
 
 }
 
