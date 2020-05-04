@@ -2,6 +2,71 @@
   text-align: center;
 }
 
+.drumblr {
+  display: flex;
+  margin: auto;
+  margin-top: 25px;
+  height: 900px;
+  width: 900px;
+  background-image: linear-gradient(180deg, #7B8795 0%, #EAEAEA 2%, #9DADBE 3%, #8C9EB4 8%, #8A9BAD 96%, #8AA1B1 96%, #68727E 97%, #98A2AB 100%);
+  border-radius: 11px;
+}
+
+.HeaderContainer {
+  display: flex;
+  margin: 25px;
+  margin-top: 45px;
+  height: 300px;
+  width: 90%;
+  background: #000000;
+  box-shadow: inset 0 1px 3px 0 rgba(255,255,255,0.50);
+}
+
+.DisplayContainer {
+
+}
+
+.LCDContainer {
+  display: flex;
+  margin-top: 25px;
+  margin-left: 200px;
+  height: 175px;
+  width: 400px;
+  background-image: linear-gradient(180deg, #5CB547 0%, #4C9038 100%);
+  border: 1px solid #979797;
+  border-radius: 8px;
+}
+
+.DialContainer {
+  display: flex;
+  height: 175px;
+  width: 175px;
+  background-image: linear-gradient(180deg, #38393D 0%, #0D1216 100%);
+  border: 5px solid #9AA4AD;
+  border-radius: 50%;
+}
+
+.DialImprint {
+  display: flex;
+  height: 45px;
+  width: 45px;
+  background-image: radial-gradient(50% 100%, #010005 15%, #5B5C61 62%, #000000 100%);
+  border: 2px solid #151515;
+  border-radius: 50%;
+}
+
+.NavBar {
+
+}
+
+.SampleContainer {
+
+}
+
+.FooterContainer {
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

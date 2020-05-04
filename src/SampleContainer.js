@@ -88,7 +88,7 @@ class SampleContainer extends React.Component{
 
     render(){
         return (
-            <>
+            <div className="SampleContainer">
                 <MIDISounds 
                 ref={(ref) => (this.midiSounds = ref)}
                 appElementName="root" 
@@ -98,7 +98,7 @@ class SampleContainer extends React.Component{
                 {/* {this.showDrums} */}
                 {this.getDrumObjButtons()}
                 {this.getInstrumentObjButtons()}
-            </>
+            </div>
 
         )
 

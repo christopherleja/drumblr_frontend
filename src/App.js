@@ -6,21 +6,34 @@ import SampleContainer from '../src/SampleContainer'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="drumblr">
+
+        <div className="HeaderContainer">
+
+          <div className="DisplayContainer">
+            <div className="LCDContainer">
+
+            </div>
+
+            <div className="DialContainer">
+              <div className="DialImprint"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="NavBar"></div>
+
+        
+
+        <div className="FooterContainer">
+
+        </div>
+
+      </div>
+
       <SampleContainer />
+    
     </div>
   );
 }
