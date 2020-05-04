@@ -24,6 +24,7 @@ function App() {
 
         <div className="NavBar"></div>
 
+        <div className="TempContainer"></div>
         
 
         <div className="FooterContainer">
