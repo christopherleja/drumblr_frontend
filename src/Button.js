@@ -13,7 +13,7 @@ class Button extends React.Component {
         let drum = this.props.drum
     return (
         <>
-            {console.log(this.props)}
+            {/* {console.log(this.props)} */}
             <button onClick={() => {this.handleClick([drum])}}>Play Drum</button>
         </>
     )
