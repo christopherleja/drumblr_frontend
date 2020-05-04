@@ -16,7 +16,7 @@ class Button extends React.Component {
         let sampleIndex = this.props.sampleIndex
         let beatIndex = this.props.beatIndex
     return (         
-            <button onClick={() => {this.handleClick(sample, sampleIndex, beatIndex)}}>{this.props.sampleObj.name}</button>
+            <button className="SequenceBtn" onClick={() => {this.handleClick(sample, sampleIndex, beatIndex)}}>{this.props.sampleObj.name}</button>
     )
     }
 }

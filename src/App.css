@@ -63,6 +63,13 @@
 
 }
 
+.SequenceBtn {
+  height: 45px;
+  width: 45px;
+  background-image: radial-gradient(50% 150%, #F2E1E1 50%, #ACA3A3 100%);
+  border-radius: 3px;
+}
+
 .FooterContainer {
 
 }
