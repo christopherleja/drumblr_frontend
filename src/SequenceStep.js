@@ -15,8 +15,7 @@ export class SequenceStep extends Component {
 
   render() {
     return (
-    <button onClick={this.handleStepClick} className="sequenceStepButtons">
-    </button>
+    <div onClick={this.handleStepClick} className="sequenceStepButtons"></div>
     )
   }
 }

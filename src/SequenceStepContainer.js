@@ -17,16 +17,19 @@ export class SequenceStepContainer extends Component {
     // for adding additional sounds, need to refactor this into a function that returns a row
     return (
       <div id="sequenceStepRowContainer">
-        <div id="sequenceStepRow1">
+        <div className="sequenceStepRow">
           {this.renderSequenceSteps()}
         </div>
-        <div id="sequenceStepRow2">
+        <div className="sequenceStepRow">
           {this.renderSequenceSteps()}
         </div>
-        <div id="sequenceStepRow3">
+        <div className="sequenceStepRow">
           {this.renderSequenceSteps()}
         </div>
-        <div id="sequenceStepRow4">
+        <div className="sequenceStepRow">
+          {this.renderSequenceSteps()}
+        </div>
+        <div className="sequenceStepRow">
           {this.renderSequenceSteps()}
         </div>
       </div>

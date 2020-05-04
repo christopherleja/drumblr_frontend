@@ -13,7 +13,6 @@ function App() {
 
           <div className="DisplayContainer">
             <div className="LCDContainer">
-
             </div>
 
             <div className="DialContainer">
@@ -25,7 +24,9 @@ function App() {
 
         <div className="NavBar"></div>
 
-        <div className="TempContainer"></div>
+        <div className="TempContainer">
+          <SequenceStepContainer />
+        </div>
         
 
         <div className="FooterContainer">
@@ -34,7 +35,6 @@ function App() {
 
       </div>
       <SampleContainer />
-      <SequenceStepContainer />
     </div>
   );
 }
