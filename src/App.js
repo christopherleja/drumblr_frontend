@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import './css/App.css';
 import SampleContainer from '../src/SampleContainer'
 import SequenceStepContainer from './SequenceStepContainer';
 
@@ -11,26 +11,33 @@ function App() {
 
         <div className="HeaderContainer">
 
-          <div className="DisplayContainer">
-            <div className="LCDContainer">
-            </div>
+          <div className="Logo">
+            DRUMBLR
+          </div>
 
-            <div className="DialContainer">
+          <div className="DisplayContainer">
+              {/* <div className="Sample">SAMPLE</div>
+              <div className="Tempo">TEMPO</div> */}
+              <div className="Status">WELCOME TO DRUMBLR</div>
+          </div>
+          
+          <div className="DialContainer">
               <div className="DialImprint"></div>
-            </div>
           </div>
 
         </div>
 
-        <div className="NavBar"></div>
+        <div className="NavBar">
+          {/* <div className="BtnLabel">
+
+          </div> */}
+        </div>
 
         <div className="TempContainer">
           <SequenceStepContainer />
         </div>
-        
 
         <div className="FooterContainer">
-
         </div>
 
       </div>
