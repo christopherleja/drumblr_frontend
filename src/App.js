@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SampleContainer from '../src/SampleContainer'
+import SequenceStepContainer from './SequenceStepContainer';
 
 function App() {
   return (
@@ -32,9 +33,8 @@ function App() {
         </div>
 
       </div>
-
       <SampleContainer />
-    
+      <SequenceStepContainer />
     </div>
   );
 }
