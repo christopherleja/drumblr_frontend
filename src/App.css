@@ -50,6 +50,8 @@
 
 .DialImprint {
   display: flex;
+  margin: auto;
+  margin-top: 7px;
   height: 45px;
   width: 45px;
   background-image: radial-gradient(50% 100%, #010005 15%, #5B5C61 62%, #000000 100%);
