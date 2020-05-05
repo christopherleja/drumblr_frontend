@@ -12,13 +12,24 @@ code {
     monospace;
 }
 
-.sequenceStepButtons{
+.activeStep{
   background-color: #008CBA;
   border: solid;
   border-color: rgb(1, 84, 112);
   border-radius: 5px;
   width: 10%;
   height: 50%;
+  margin: 0 3px;
+}
+
+.inactiveStep{
+  background-color: rgb(73, 79, 85);
+  border: solid;
+  border-color: rgb(1, 84, 112);
+  border-radius: 5px;
+  width: 10%;
+  height: 50%;
+  margin: 0 3px;
 }
 
 #sequenceStepRowContainer{

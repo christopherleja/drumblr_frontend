@@ -10,12 +10,11 @@ export class SequenceStep extends Component {
     this.setState({
       isActive: !this.state.isActive
     });
-    console.log(this.state.isActive)
   }
 
   render() {
     return (
-    <div onClick={this.handleStepClick} className="sequenceStepButtons"></div>
+    <div onClick={this.handleStepClick} className={this.state.isActive ? "activeStep" : "inactiveStep"}></div>
     )
   }
 }
