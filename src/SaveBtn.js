@@ -5,6 +5,7 @@ export default class SaveBtn extends React.Component {
   render() {
     return (
       <div className="SaveBtn">
+        <button>Save</button>
       </div>
     )
   }

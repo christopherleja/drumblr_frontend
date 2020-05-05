@@ -23,21 +23,11 @@
   flex-wrap: wrap;
   margin: auto;
   margin-top: 25px;
-  /* height: 900px; */
+  height: 900px;
   width: 900px;
   background-image: linear-gradient(180deg, #7B8795 0%, #EAEAEA 2%, #9DADBE 3%, #8C9EB4 8%, #8A9BAD 96%, #8AA1B1 96%, #68727E 97%, #98A2AB 100%);
   border-radius: 11px;
 }
-
-/* .Input {
-  background-image: linear-gradient(90deg, #9E9488 0%, #FFF9F7 16%, #FEF9F5 31%, #616159 38%, #FEFDF8 44%, #FEFDF9 54%, #69695D 61%, #FCFCFC 69%, #FEFAF7 79%, #817D74 100%, #EEEEEE 100%);
-  border-radius: 8px;
-  height: 30px;
-  width: 25px;
-  margin-top: 20px;
-  margin-left: 500px;
-  display: flex;
-} */
 
 .HeaderContainer {
   /* border: 2px solid red; */
@@ -146,7 +136,9 @@
 }
 
 .NavBar {
-
+  display: flex;
+  height: 5%;
+  border: 1px solid red;
 }
 
 .SampleContainer {
@@ -154,10 +146,10 @@
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 4em;
+  /* margin-top: 4em; */
   margin-bottom: 6em;
   width: 85%;
-  /* height: 45%; */
+  height: 45%;
   background-image: linear-gradient(180deg, #A6B7CB 0%, #8B9BB2 100%);
   box-shadow: 0 1px 6px 0 rgba(0,0,0,0.11);
   justify-content: center;
@@ -233,6 +225,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+MIDISounds {
+  border: 1px solid red;
+  display: block;
 }
 
 @keyframes App-logo-spin {
