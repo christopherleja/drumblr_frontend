@@ -61,7 +61,7 @@ export default class App extends React.Component {
 
         <HeaderContainer />
         <NavBar>
-        <br></br><MIDISounds 
+        <MIDISounds 
                 ref={(ref) => (this.midiSounds = ref)}
                 appElementName="root" 
 	            // instruments={[458]} 

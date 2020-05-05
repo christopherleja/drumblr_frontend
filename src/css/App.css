@@ -1,15 +1,13 @@
 @font-face {
   font-family: 'lcdnormal';
-  src: url('./fonts/lcd-n___-webfont.woff2') format('woff2'),
-       url('./fonts/lcd-n___-webfont.woff') format('woff');
+  src: url('./fonts/lcd-n___-webfont.woff2') format('woff2'), url('./fonts/lcd-n___-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'tr-909regular';
-  src: url('./fonts/tr-909-webfont.woff2') format('woff2'),
-       url('./fonts/tr-909-webfont.woff') format('woff');
+  src: url('./fonts/tr-909-webfont.woff2') format('woff2'), url('./fonts/tr-909-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -21,21 +19,32 @@
 .drumblr {
   /* border: 2px solid red; */
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: auto;
   margin-top: 25px;
-  height: 900px;
+  /* height: 900px; */
   width: 900px;
   background-image: linear-gradient(180deg, #7B8795 0%, #EAEAEA 2%, #9DADBE 3%, #8C9EB4 8%, #8A9BAD 96%, #8AA1B1 96%, #68727E 97%, #98A2AB 100%);
   border-radius: 11px;
 }
+
+/* .Input {
+  background-image: linear-gradient(90deg, #9E9488 0%, #FFF9F7 16%, #FEF9F5 31%, #616159 38%, #FEFDF8 44%, #FEFDF9 54%, #69695D 61%, #FCFCFC 69%, #FEFAF7 79%, #817D74 100%, #EEEEEE 100%);
+  border-radius: 8px;
+  height: 30px;
+  width: 25px;
+  margin-top: 20px;
+  margin-left: 500px;
+  display: flex;
+} */
 
 .HeaderContainer {
   /* border: 2px solid red; */
   display: flex;
   margin: auto;
   margin-top: 40px;
-  height: 275px;
+  height: 29%;
   width: 95%;
   background: #000000;
   box-shadow: inset 0 1px 3px 0 rgba(255,255,255,0.50);
@@ -97,6 +106,8 @@
   margin: auto;
   border: 3px solid #000000;
   font-family: 'lcdnormal';
+  font-family: LCDNormal;;
+  color: #00541B;
   font-size: 42px;
   align-items: center;
   padding-left: 0em;
@@ -127,9 +138,9 @@
 }
 
 .BtnLabel {
-  height: 75px;
-  width: 100px;
-  background-image: linear-gradient(0deg, rgba(216,216,216,0.00) 59%, #212227 59%);
+  height: 70px;
+  width: 80px;
+  background-image: linear-gradient(0deg, rgba(216,216,216,0.00) 62%, #212227 62%);
   border: 2px solid #282C2F;
   border-radius: 9px;
 }
@@ -143,15 +154,47 @@
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 0px;
+  margin-top: 4em;
+  margin-bottom: 6em;
   width: 85%;
-  height: 45%;
+  /* height: 45%; */
   background-image: linear-gradient(180deg, #A6B7CB 0%, #8B9BB2 100%);
   box-shadow: 0 1px 6px 0 rgba(0,0,0,0.11);
+  justify-content: center;
 }
 
 .SampleContainer {
 
+}
+/* 
+.sequenceStepRow {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  margin: .7em;
+  justify-content: space-evenly;
+  background-image: linear-gradient(0deg, rgba(216,216,216,0.00) 62%, #212227 62%);
+  border: 2px solid #282C2F;
+  border-radius: 9px;
+}
+
+.sequenceStepButtons {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: .1em;
+  
+  height: 20px;
+  width: 32px;
+  background-image: radial-gradient(50% 150%, rgb(164, 169, 176) 50%, #8B96A9 100%);
+  border: 1px solid #363D47;
+  border-radius: 4px;
+  border-radius: 4px;
+}
+
+.sequenceStepButtonsOn {
+  background-image: radial-gradient(50% 150%, #FE737C 50%, #E85A5E 100%);
+  border: 1px solid #B6343E;
+  box-shadow: 0 0 5px 2px #D599A3;
 }
 
 .SequenceBtn {
@@ -159,7 +202,7 @@
   width: 45px;
   background-image: radial-gradient(50% 150%, #F2E1E1 50%, #ACA3A3 100%);
   border-radius: 3px;
-}
+} */
 
 .FooterContainer {
   /* border: 2px solid red; */
