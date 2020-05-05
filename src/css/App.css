@@ -41,7 +41,7 @@
   box-shadow: inset 0 1px 3px 0 rgba(255,255,255,0.50);
 }
 
-.Logo {
+.LogoContainer {
   /* border: 2px solid red; */
   order:1;
   display: flex;
@@ -138,9 +138,10 @@
 
 }
 
-.TempContainer {
+.SampleContainer {
   /* border: 2px solid red; */
   display: flex;
+  flex-wrap: wrap;
   margin: auto;
   margin-top: 0px;
   width: 85%;
