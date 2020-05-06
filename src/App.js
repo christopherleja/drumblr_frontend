@@ -48,7 +48,7 @@ export default class App extends React.Component {
           return notesToPlay
         }
       })
-  
+    
     let bpm = this.state.bpm 
     let beat = 4 * 60 / bpm
     let duration = beat/16

@@ -12,9 +12,15 @@ export default class NavBar extends React.Component {
     this.setState({
       start: !this.state.start
     })
+    if (this.state.start){
+      this.handlePlayingSequence()
+    } else {
+      console.log("stopped")
+    }
+
   }
 
-  componentDidUpdate = () => {
+  handlePlayingSequence = () => {
     if (this.state.start){
       this.props.playSequence()
     } 
