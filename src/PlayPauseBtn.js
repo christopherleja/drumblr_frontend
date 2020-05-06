@@ -2,9 +2,6 @@ import React from 'react'
 
 export default class PlayPauseBtn extends React.Component {
 
-  toggleStartStop = () => {
-    this.props.toggleStart()
-  }
 
   render() {
     return (

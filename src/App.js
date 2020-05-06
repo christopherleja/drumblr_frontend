@@ -30,21 +30,6 @@ export default class App extends React.Component {
     }],
   }
 
-  // playTheseNotes = () => {
-  //   let notesToPlay = []
-  //   let drums = [...this.state.drumObjs]
-  //   for (let i=0; i<drums.length; i++)
-  //     drums[i].isPlaying.filter((note, index )=> {
-  //       if (note){
-  //         let drum = drums[i].id
-  //         let noteObj = {sample: drum, beatIndex: index}          
-  //         notesToPlay.push(noteObj)
-  //         console.log(noteObj)
-  //         console.log(notesToPlay)
-  //         return notesToPlay
-  //       }
-  //     })
-  // }
 
   playSequence = () => {
 
@@ -94,7 +79,7 @@ export default class App extends React.Component {
     updatedDrumObjs[sampleIndex].isPlaying = [...this.state.drumObjs[sampleIndex].isPlaying]
     this.setState({
       drumObjs: updatedDrumObjs
-    }, () => {console.log(this.state)})
+    })
   }
 
   // render MIDISounds logo in order for samples to play when sequence is triggered
