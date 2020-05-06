@@ -8,7 +8,7 @@ class Button extends React.Component {
     }
     
     handleClick = (sample, sampleIndex, beatIndex) => {  
-        // this.props.togglePlaying(sampleIndex, beatIndex)
+        this.props.togglePlaying(sampleIndex, beatIndex)
         // console.log(this.props)
         this.props.sequenceThisNote(sample, sampleIndex, beatIndex)
         this.setState({

@@ -10,7 +10,7 @@ export default class SampleContainer extends React.Component{
             let drumIndex = index
             let drum = drumObj
             return drumObj.isPlaying.map((beat, index) => {
-                return <Button key={drum.name + index} id={drum.id} sampleIndex={drumIndex} beatIndex={index} togglePlaying={this.togglePlaying} sampleObj={drum} sequenceThisNote={this.props.sequenceThisNote}/>
+                return <Button key={drum.name + index} id={drum.id} sampleIndex={drumIndex} beatIndex={index} togglePlaying={this.props.togglePlaying} sampleObj={drum} sequenceThisNote={this.props.sequenceThisNote}/>
             })
         })
     }

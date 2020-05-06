@@ -27,7 +27,52 @@ export default class App extends React.Component {
       id: 35, 
       name: 'Closed Hi-hat', 
       isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-    }]
+    }],
+  }
+
+  // playTheseNotes = () => {
+  //   let notesToPlay = []
+  //   let drums = [...this.state.drumObjs]
+  //   for (let i=0; i<drums.length; i++)
+  //     drums[i].isPlaying.filter((note, index )=> {
+  //       if (note){
+  //         let drum = drums[i].id
+  //         let noteObj = {sample: drum, beatIndex: index}          
+  //         notesToPlay.push(noteObj)
+  //         console.log(noteObj)
+  //         console.log(notesToPlay)
+  //         return notesToPlay
+  //       }
+  //     })
+  // }
+
+  playSequence = () => {
+
+    // gets array of notes with value of true
+    let notesToPlay = []
+    let drums = [...this.state.drumObjs]
+    for (let i=0; i<drums.length; i++)
+      drums[i].isPlaying.filter((note, index )=> {
+        if (note){
+          let drum = drums[i].id
+          let noteObj = {sample: drum, beatIndex: index}          
+          notesToPlay.push(noteObj)
+          return notesToPlay
+        }
+      })
+  
+    let bpm = this.state.bpm 
+    let beat = 4 * 60 / bpm
+    let duration = beat/16
+    let time = this.midiSounds.contextTime()
+
+    notesToPlay.map(note => {
+      let noteTime = time + (duration + (duration * note.beatIndex))
+      this.midiSounds.playDrumsAt(noteTime, [note.sample])
+      
+    })
+    // let noteTime = time + (duration + (duration * beatIndex))
+
   }
 
   sequenceThisNote = (sample, sampleIndex, beatIndex) => {
@@ -36,21 +81,20 @@ export default class App extends React.Component {
     let duration = beat/16
     let time = this.midiSounds.contextTime()
     let noteTime = time + (duration + (duration * beatIndex))
-        // let sample2Send = {sample, noteTime}
-        // let beingPlayed = []
-        // beingPlayed.push(sample2Send)
-        // console.log(beingPlayed)
-        // return beingPlayed
-        // beingPlayed.map(sample => this.midiSounds.playDrumsAt(sample.noteTime, [sample.sample]))
-    this.midiSounds.playDrumsAt(noteTime, [sample])
+      
+    // this.midiSounds.playDrumsAt(noteTime, [sample])
     // console.log(time, noteTime)
     // console.log(sampleIndex, this.props.app.drumObjs[sampleIndex])
 }
 
   togglePlaying = (sampleIndex, beatIndex) => {
-    let drumObjsCopy = [...this.state.drumObjs]
-    let isPlayingCopy = [...drumObjsCopy[sampleIndex].isPlaying]
-    console.log(isPlayingCopy[beatIndex])
+    let updatedDrumObjs = [...this.state.drumObjs]
+    let updatedIsPlaying = updatedDrumObjs[sampleIndex].isPlaying
+    updatedIsPlaying[beatIndex] = !updatedIsPlaying[beatIndex]
+    updatedDrumObjs[sampleIndex].isPlaying = [...this.state.drumObjs[sampleIndex].isPlaying]
+    this.setState({
+      drumObjs: updatedDrumObjs
+    }, () => {console.log(this.state)})
   }
 
   // render MIDISounds logo in order for samples to play when sequence is triggered
@@ -69,7 +113,7 @@ export default class App extends React.Component {
       <div className="App">
         <div className="drumblr">
           <HeaderContainer />
-          <NavBar />
+          <NavBar playSequence={this.playSequence}/>
           <SampleContainer app={this.state} togglePlaying={this.togglePlaying} sequenceThisNote={this.sequenceThisNote}/>
           <div className="FooterContainer"></div>
         </div>
