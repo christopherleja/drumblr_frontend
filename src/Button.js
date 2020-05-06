@@ -6,8 +6,8 @@ class Button extends React.Component {
         isActive: false
     }
     
-    handleClick = (sampleIndex, beatIndex) => {  
-        this.props.togglePlaying(sampleIndex, beatIndex)
+    handleClick = () => {  
+        this.props.onClick();
         // this.props.sequenceThisNote(sample, sampleIndex, beatIndex)
         this.setState({
             isActive: !this.state.isActive
@@ -17,10 +17,10 @@ class Button extends React.Component {
 
 
     render(){
-        let sampleIndex = this.props.sampleIndex
-        let beatIndex = this.props.beatIndex
+        // let sampleIndex = this.props.sampleIndex
+        // let beatIndex = this.props.beatIndex
         return (         
-        <div className={this.state.isActive ? "activeStep step" : "inactiveStep step"} onClick={() => {this.handleClick(sampleIndex, beatIndex)}}></div>
+        <div className={this.state.isActive ? "activeStep step" : "inactiveStep step"} onClick={this.handleClick}></div>
         )
     }
 }

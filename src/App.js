@@ -9,33 +9,27 @@ const URL = 'http://localhost:3000';
 export default class App extends React.Component {
 
   state = {
-    // just chose a default bpm to set state with
     bpm: 120,
-    // name for saved beats
     name: 'test',
-    // I just hardcoded in some basic drums to start
-    drumObjs: [{
-        midiID: 3, 
-        name: 'Bass Drum', 
-        isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-      }, {
-        midiID: 22, 
-        name: 'Hand Clap', 
-        isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-      }, {
-        midiID: 26, 
-        name: 'Snare', 
-        isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-      },{
-      midiID: 35, 
-      name: 'Closed Hi-hat', 
-      isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-    }],
+    Sample1: 3,
+    Sample2: 22,
+    Sample3: 26,
+    Sample4: 35,
+    tracks:[
+      [true,false,false,false,false,false,false,true,true,false,true,false,false,false,true,false],
+      [false,false,false,false,true,false,false,false,false,false,false,false,true,false,false,false],
+      [false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false],
+      [true,false,true,false,true,false,true,false,true,false,true,false,true,false,true,false]
+    ],
+    data: [],
+    beats: []
   }
 
-
+	componentDidMount() {
+		this.setState({ initialized: true });
+  }
+  
   playSequence = () => {
-
     // gets array of notes with value of true
     let notesToPlay = []
     let drums = [...this.state.drumObjs]
@@ -66,29 +60,6 @@ export default class App extends React.Component {
     })
   }
 
-  togglePlaying = (sampleIndex, beatIndex) => {
-    let updatedDrumObjs = [...this.state.drumObjs]
-    let updatedIsPlaying = updatedDrumObjs[sampleIndex].isPlaying
-    updatedIsPlaying[beatIndex] = !updatedIsPlaying[beatIndex]
-    updatedDrumObjs[sampleIndex].isPlaying = [...this.state.drumObjs[sampleIndex].isPlaying]
-    this.setState({
-      drumObjs: updatedDrumObjs
-    })
-  }
-
-  // persist current sequence to database
-  handleSave = () => {
-    fetch(URL + '/beats', {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(this.state)
-    })
-    .then(response => response.json())
-    .then(response => {
-      console.log("Saved to db", response);
-    })
-  }
-
   // render MIDISounds logo in order for samples to play when sequence is triggered
   renderMIDISounds = () => {
     return (
@@ -99,14 +70,52 @@ export default class App extends React.Component {
       />
     )
   }
+  
+  fillBeat = () => {
+		for(let i=0;i<16;i++){
+      let drums=[];
+      let newBeats = [...this.state.beats]
+      
+			if(this.state.tracks[0][i]){drums.push(this.state.Sample1);}
+			if(this.state.tracks[1][i]){drums.push(this.state.Sample2);}
+			if(this.state.tracks[2][i]){drums.push(this.state.Sample3);}
+			if(this.state.tracks[3][i]){drums.push(this.state.Sample4);}
+      let beat=[drums,[]];
+      newBeats[i] = beat
+      console.log("newBeats value", newBeats[i])
+      console.log("the beat value", beat)
+			this.setState({
+        beats: newBeats
+      })
+    }
+	}
+	playLoop = () => {
+    this.fillBeat();
+    // debugger;
+    this.midiSounds.startPlayLoop(this.state.beats, 120, 1/16);
+    console.log("playLoop triggered")
+  }
+  
+	stopLoop = () => {
+		this.midiSounds.stopPlayLoop();
+  }
+  
+	toggleDrum = (track,step) => {
+		let a=this.state.tracks;
+		a[track][step] = !a[track][step];
+		this.setState({tracks:a});
+    this.fillBeat();
+    console.log("toggleDrum", track, step)
+	}
 
   render() {
     return (
       <div className="App">
+      <button onClick={this.fillBeat}>fillBeat</button>
         <div className="drumblr">
           <HeaderContainer />
-          <NavBar playSequence={this.playSequence} handleSave={this.handleSave} bpm={this.state.bpm} />
-          <SampleContainer app={this.state} togglePlaying={this.togglePlaying} sequenceThisNote={this.sequenceThisNote}/>
+          <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} bpm={this.state.bpm} />
+          <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
           <div className="FooterContainer"></div>
         </div>
         {this.renderMIDISounds()}

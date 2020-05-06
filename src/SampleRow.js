@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Button from './Button'
+import React, { Component } from 'react';
+import Button from './Button';
 
 export class SampleRow extends Component {
 
@@ -12,9 +12,26 @@ export class SampleRow extends Component {
     }
 
   render() {
+    // console.log("Sample Row", this.props.appProps)
+    // console.log("Sample row hanlders", this.props.toggleDrum)
     return (
       <div className="buttonRowContainer">
-        {this.getDrumObjButtons()}
+        	<Button onClick={() => this.props.toggleDrum(this.props.id,0)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,1)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,2)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,3)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,4)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,5)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,6)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,7)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,8)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,9)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,10)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,11)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,12)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,13)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,14)} />
+					<Button onClick={() => this.props.toggleDrum(this.props.id,15)} />
       </div>
     )
   }
