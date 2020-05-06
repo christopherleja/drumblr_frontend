@@ -1,5 +1,4 @@
 import React from 'react'
-import MIDISounds from 'midi-sounds-react';
 
 class Button extends React.Component {
 

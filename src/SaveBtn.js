@@ -5,7 +5,7 @@ export default class SaveBtn extends React.Component {
   render() {
     return (
       <div className="SaveBtn">
-        <button>Save</button>
+        <button onClick={this.props.handleSave}>Save</button>
       </div>
     )
   }

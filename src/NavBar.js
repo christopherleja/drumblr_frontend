@@ -23,9 +23,9 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div className="NavBar">
-        <SaveBtn />
+        <SaveBtn handleSave={this.props.handleSave} />
         <LoadBtn />
-        <PlayPauseBtn toggleStart={this.toggleStart}/>
+        <PlayPauseBtn toggleStart={this.toggleStart} />
       </div>
     )
   }

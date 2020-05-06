@@ -4,12 +4,15 @@ import SampleContainer from './SampleContainer';
 import HeaderContainer from './HeaderContainer';
 import NavBar from './NavBar';
 import './css/App.css';
+const URL = 'http://localhost:3000';
 
 export default class App extends React.Component {
 
   state = {
     // just chose a default bpm to set state with
     bpm: 120,
+    // name for saved beats
+    name: 'test',
     // I just hardcoded in some basic drums to start
     drumObjs: [{
         id: 3, 
@@ -80,6 +83,19 @@ export default class App extends React.Component {
     })
   }
 
+  // persist current sequence to database
+  handleSave = () => {
+    fetch(URL + '/beats', {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(this.state)
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log("Saved to db", response);
+    })
+  }
+
   // render MIDISounds logo in order for samples to play when sequence is triggered
   renderMIDISounds = () => {
     return (
@@ -96,7 +112,7 @@ export default class App extends React.Component {
       <div className="App">
         <div className="drumblr">
           <HeaderContainer />
-          <NavBar playSequence={this.playSequence}/>
+          <NavBar playSequence={this.playSequence} handleSave={this.handleSave} />
           <SampleContainer app={this.state} togglePlaying={this.togglePlaying} sequenceThisNote={this.sequenceThisNote}/>
           <div className="FooterContainer"></div>
         </div>
