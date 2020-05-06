@@ -14,34 +14,31 @@ code {
 
 .activeStep{
   background-color: #008CBA;
-  border: solid;
-  border-color: rgb(1, 84, 112);
-  border-radius: 5px;
-  width: 4.5%;
-  height: 7%;
-  margin: 0 3px;
 }
 
 .inactiveStep{
   background-color: rgb(73, 79, 85);
+}
+
+.step {
   border: solid;
   border-color: rgb(1, 84, 112);
   border-radius: 5px;
-  width: 4.5%;
-  height: 7%;
   margin: 0 3px;
+  height: 50px;
+  width: 50px;
 }
 
-#sampleContainer{
+.sampleRow{
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   width: 100%;
-  height: 100%;
+  height: 20%;
   justify-content: flex-start;
 }
 
 .sequenceStepRow {
-  height: 20%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
 }

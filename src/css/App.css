@@ -141,10 +141,10 @@
   border: 1px solid red;
 }
 
-.SampleContainer {
+.sampleContainer {
   /* border: 2px solid red; */
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: auto;
   /* margin-top: 4em; */
   margin-bottom: 6em;
@@ -155,9 +155,11 @@
   justify-content: center;
 }
 
-.SampleContainer {
-
+.buttonRowContainer {
+  display: flex;
+  height: 100%;
 }
+
 /* 
 .sequenceStepRow {
   display: flex;
