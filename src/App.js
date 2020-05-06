@@ -52,15 +52,20 @@ export default class App extends React.Component {
     let bpm = this.state.bpm 
     let beat = 4 * 60 / bpm
     let duration = beat/16
-    let time = this.midiSounds.contextTime()
-
+    let time = null
+    if (this.midiSounds.contextTime() === null){
+      time = 0
+    } else{
+      time = this.midiSounds.contextTime()
+    }
+    // let time = this.midiSounds.contextTime()
+    console.log(this.midiSounds)
     notesToPlay.map(note => {
       let noteTime = time + (duration + (duration * note.beatIndex))
       this.midiSounds.playDrumsAt(noteTime, [note.sample])
       
     })
     // let noteTime = time + (duration + (duration * beatIndex))
-
   }
 
   sequenceThisNote = (sample, sampleIndex, beatIndex) => {
