@@ -23,6 +23,17 @@ export default class NavBar extends React.Component {
   handlePlayingSequence = () => {
     if (this.state.start){
       this.props.playSequence()
+      for (let i=1; i < 10; i++){
+        let delay = (4 * 60 / this.props.bpm) * i
+        console.log(delay)
+        if (this.state.start){
+        setTimeout(() => this.props.playSequence(), (delay * 1000))
+      } else if (!this.state.start){
+        console.log("stopped")
+      }
+    }
+    } else {
+      console.log("stopped")
     } 
   }
 

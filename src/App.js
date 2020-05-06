@@ -15,19 +15,19 @@ export default class App extends React.Component {
     name: 'test',
     // I just hardcoded in some basic drums to start
     drumObjs: [{
-        id: 3, 
+        midiID: 3, 
         name: 'Bass Drum', 
         isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       }, {
-        id: 22, 
+        midiID: 22, 
         name: 'Hand Clap', 
         isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       }, {
-        id: 26, 
+        midiID: 26, 
         name: 'Snare', 
         isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
       },{
-      id: 35, 
+      midiID: 35, 
       name: 'Closed Hi-hat', 
       isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
     }],
@@ -42,7 +42,7 @@ export default class App extends React.Component {
     for (let i=0; i<drums.length; i++)
       drums[i].isPlaying.filter((note, index )=> {
         if (note){
-          let drum = drums[i].id
+          let drum = drums[i].midiID
           let noteObj = {sample: drum, beatIndex: index}          
           notesToPlay.push(noteObj)
           return notesToPlay
@@ -58,25 +58,13 @@ export default class App extends React.Component {
     } else{
       time = this.midiSounds.contextTime()
     }
-    // let time = this.midiSounds.contextTime()
     console.log(this.midiSounds)
     notesToPlay.map(note => {
       let noteTime = time + (duration + (duration * note.beatIndex))
       this.midiSounds.playDrumsAt(noteTime, [note.sample])
       
     })
-    // let noteTime = time + (duration + (duration * beatIndex))
   }
-
-  sequenceThisNote = (sample, sampleIndex, beatIndex) => {
-    let bpm = this.state.bpm 
-    let beat = 4 * 60 / bpm
-    let duration = beat/16
-    let time = this.midiSounds.contextTime()
-    let noteTime = time + (duration + (duration * beatIndex))
-      
-    // this.midiSounds.playDrumsAt(noteTime, [sample])
-}
 
   togglePlaying = (sampleIndex, beatIndex) => {
     let updatedDrumObjs = [...this.state.drumObjs]
@@ -117,7 +105,7 @@ export default class App extends React.Component {
       <div className="App">
         <div className="drumblr">
           <HeaderContainer />
-          <NavBar playSequence={this.playSequence} handleSave={this.handleSave} />
+          <NavBar playSequence={this.playSequence} handleSave={this.handleSave} bpm={this.state.bpm} />
           <SampleContainer app={this.state} togglePlaying={this.togglePlaying} sequenceThisNote={this.sequenceThisNote}/>
           <div className="FooterContainer"></div>
         </div>
