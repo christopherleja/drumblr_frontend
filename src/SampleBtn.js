@@ -1,14 +1,13 @@
-import React from 'react'
-import MIDISounds from 'midi-sounds-react';
+import React from 'react';
 
-class Button extends React.Component {
+export default class SampleBtn extends React.Component {
 
     state = {
         isActive: false
     }
     
     handleClick = (sample, sampleIndex, beatIndex) => {  
-        this.props.togglePlaying(sampleIndex, beatIndex)
+        // this.props.togglePlaying(sampleIndex, beatIndex)
         this.props.sequenceThisNote(sample, sampleIndex, beatIndex)
         this.setState({
             isActive: !this.state.isActive
@@ -22,9 +21,7 @@ class Button extends React.Component {
         let sampleIndex = this.props.sampleIndex
         let beatIndex = this.props.beatIndex
         return (         
-        <div className={this.state.isActive ? "activeStep step" : "inactiveStep step"} onClick={() => {this.handleClick(sample, sampleIndex, beatIndex)}}></div>
+        <div className={this.state.isActive ? "activeStep" : "inactiveStep"} onClick={() => {this.handleClick(sample, sampleIndex, beatIndex)}}></div>
         )
     }
 }
-
-export default Button

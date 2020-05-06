@@ -68,8 +68,6 @@ export default class App extends React.Component {
     let noteTime = time + (duration + (duration * beatIndex))
       
     // this.midiSounds.playDrumsAt(noteTime, [sample])
-    // console.log(time, noteTime)
-    // console.log(sampleIndex, this.props.app.drumObjs[sampleIndex])
 }
 
   togglePlaying = (sampleIndex, beatIndex) => {

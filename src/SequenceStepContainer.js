@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SequenceStep from './SequenceStep'
 
-export class SequenceStepContainer extends Component {
+export default class SequenceStepContainer extends Component {
 
   renderSequenceSteps = () => {
     let stepRow = []
@@ -37,4 +37,4 @@ export class SequenceStepContainer extends Component {
   }
 }
 
-export default SequenceStepContainer
+// export default SequenceStepContainer
