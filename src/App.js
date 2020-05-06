@@ -53,7 +53,7 @@ export default class App extends React.Component {
     let beat = 4 * 60 / bpm
     let duration = beat/16
     let time = null
-    if (this.midiSounds.contextTime() === null){
+    if (this.midiSounds === null){
       time = 0
     } else{
       time = this.midiSounds.contextTime()
