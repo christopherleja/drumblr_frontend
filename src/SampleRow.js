@@ -15,7 +15,7 @@ export class SampleRow extends Component {
   render() {
     return (
       <div className="SampleRow">
-        <SampleBtnIcon /> 
+        <SampleBtnIcon name={this.props.name} />
         <div className="buttonRowContainer">
           {this.getDrumButtons()}
         </div>

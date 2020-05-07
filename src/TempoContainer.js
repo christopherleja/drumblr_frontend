@@ -14,13 +14,17 @@ export default class TempoContainer extends React.Component {
     this.props.adjustBPM(decrementedBPM)
   }
 
+  handleScroll = (e) => {
+    console.log(e.target)
+  }  
+
   render() {
     return (
       <div className="TempoContainer">
         <div className="Tempo">TEMPO</div>
         <div className="BPM">
           <div className="DecreaseBPM" onClick={this.handleDecrease}>-</div>
-          <div className="BPMValue">{this.props.bpm}</div>
+          <div className="BPMValue" onScroll={() => this.handleScroll} >{this.props.bpm}</div>
           <div className="IncreaseBPM" onClick={this.handleIncrease} value={1}>+</div>
         </div>
       </div>

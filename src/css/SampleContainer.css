@@ -52,6 +52,7 @@
   flex-wrap: wrap;
   text-align: center;
   margin: auto;
+  text-transform: uppercase;
   color: #ffffff;
   font-size: 12px;
 }

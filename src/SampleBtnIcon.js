@@ -19,7 +19,7 @@ export default class SampleBtnIcon extends React.Component {
     render(){
       return (
         <div className="SampleBtnIcon">
-          <p>SNARE</p>
+          <p>{this.props.name}</p>
         </div>
       )
     }
