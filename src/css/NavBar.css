@@ -2,6 +2,10 @@
 
 .NavBar {
   display: flex;
+  font-family: Menlo;
+  font-weight: bolder;
+  font-style: italic;
+  text-transform: uppercase;
   color: rgb(70, 70, 70);
   margin-left: 2.8em;
   margin-right: 1.5em;
@@ -22,7 +26,7 @@
 
 .NavBarBtn p {
   margin: auto;
-  margin-top: .5em;
+  margin-top: .16em;
 }
 
 .NavBarBtn:hover {
@@ -44,9 +48,9 @@
 }
 
 .PlayBtn p {
-  font-size: 20px;
+  font-size: 25px;
   margin: auto;
-  margin-top: .09em
+  margin-top: -.19em
 }
 
 .PlayBtn:hover {
@@ -81,7 +85,7 @@
 .StopBtn p {
   font-size: 27px;
   margin: auto;
-  margin-top: .19em
+  margin-top: -.22em;
 }
 
 .StopBtn:hover {

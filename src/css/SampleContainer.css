@@ -3,6 +3,9 @@
 .sampleContainer {
   display: flex;
   flex-direction: column;
+  font-family: Menlo;
+  font-weight: bolder;
+  font-style: italic;
   margin: auto;
   margin-top: .2em;
   width: 90%;
