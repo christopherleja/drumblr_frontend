@@ -100,15 +100,17 @@
 }
 
 .step:hover {
-  background-image: radial-gradient(50% 150%, rgb(148, 191, 206) 50%, rgb(53, 139, 167) 250%);
-  border: 2px solid rgb(107, 177, 202);
-  box-shadow: 0 0 5px 2px rgb(148, 191, 206);
+  background-image: radial-gradient(50% 320%, rgb(199, 232, 254) 0%, rgb(123, 198, 249) 200%);
+  color: rgb(66, 108, 136);
+  border: 2px solid rgb(176, 204, 223);
+  box-shadow: 0 0 4px 2px rgb(123, 198, 249);
 }
 
 .activeStep {
-  background-image: radial-gradient(50% 150%, rgb(148, 191, 206) 50%, rgb(53, 139, 167) 250%);
-  border: 2px solid rgb(107, 177, 202);
-  box-shadow: 0 0 5px 2px rgb(148, 191, 206);
+  background-image: radial-gradient(50% 320%, rgb(199, 232, 254) 0%, rgb(123, 198, 249) 200%);
+  color: rgb(66, 108, 136);
+  border: 2px solid rgb(176, 204, 223);
+  box-shadow: 0 0 4px 2px rgb(123, 198, 249);
 }
 
 .SequenceBtn {
