@@ -31,7 +31,7 @@
   border-radius: 29px;
 }
 
-.PlayBtn {
+.PlayBtn.inactive{
   margin-right: .4em;
   height: 1.5em;
   width: 5em;
@@ -42,8 +42,9 @@
 }
 
 .PlayBtn p {
+  font-size: 20px;
   margin: auto;
-  margin-top: .5em;
+  margin-top: .09em
 }
 
 .PlayBtn:hover {
@@ -53,7 +54,17 @@
   border-radius: 29px;
 }
 
-.StopBtn {
+.PlayBtn.active {
+  margin-right: .4em;
+  height: 1.5em;
+  width: 5em;
+  background-image: radial-gradient(50% 320%, #EAFFED 0%, #53DA5B 200%);
+  border: 2px solid rgb(178, 221, 185);
+  box-shadow: 0 0 4px 2px rgba(106,211,100,0.50);
+  border-radius: 29px;
+}
+
+.StopBtn.inactive{
   margin-right: .4em;
   height: 1.5em;
   width: 5em;
@@ -64,11 +75,22 @@
 }
 
 .StopBtn p {
+  font-size: 27px;
   margin: auto;
-  margin-top: .5em;
+  margin-top: .19em
 }
 
 .StopBtn:hover {
+  background-image: radial-gradient(50% 150%, rgb(238, 157, 162) 50%, #E85A5E 200%);
+  border: 2px solid rgb(241, 142, 149);
+  box-shadow: 0 0 5px 2px rgb(208, 127, 141);
+  border-radius: 29px;
+}
+
+.StopBtn.active {
+  margin-right: .4em;
+  height: 1.5em;
+  width: 5em;
   background-image: radial-gradient(50% 150%, rgb(238, 157, 162) 50%, #E85A5E 200%);
   border: 2px solid rgb(241, 142, 149);
   box-shadow: 0 0 5px 2px rgb(208, 127, 141);
