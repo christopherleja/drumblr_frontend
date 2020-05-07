@@ -89,8 +89,8 @@
   margin-bottom: .1em;
   height: 20px;
   width: 32px;
-  background-image: radial-gradient(50% 150%, rgb(164, 169, 176) 50%, #8B96A9 200%);
-  border: 2px solid rgb(124, 126, 130);
+  background-image: radial-gradient(50% 100%, rgb(182, 187, 194) 75%, rgb(116, 125, 141) 120%);
+  border: 2px solid rgb(132, 135, 139);
   border-radius: 4px;
   border-radius: 4px;
   transition: 0.5s;
