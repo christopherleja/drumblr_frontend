@@ -1,9 +1,15 @@
 import React from 'react';
 import MIDISounds from 'midi-sounds-react';
-import SampleContainer from './SampleContainer';
 import HeaderContainer from './HeaderContainer';
 import NavBar from './NavBar';
+import SampleContainer from './SampleContainer';
+import FooterContainer from './FooterContainer';
 import './css/App.css';
+import './css/HeaderContainer.css';
+import './css/NavBar.css';
+import './css/SampleContainer.css';
+import './css/FooterContainer.css';
+
 const URL = 'http://localhost:3000';
 
 export default class App extends React.Component {
@@ -32,6 +38,7 @@ export default class App extends React.Component {
   renderMIDISounds = () => {
     return (
       <MIDISounds 
+      className="MIDISounds"
       ref={(ref) => (this.midiSounds = ref)}
       appElementName="root" 
       drums={[this.state.sample1, this.state.sample2, this.state.sample3, this.state.sample4]}
@@ -73,16 +80,15 @@ export default class App extends React.Component {
 
   render() {
     return (
+      <>
       <div className="App">
-      <button onClick={this.fillBeat}>fillBeat</button>
-        <div className="drumblr">
           <HeaderContainer />
           <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} bpm={this.state.bpm} />
           <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
-          <div className="FooterContainer"></div>
-        </div>
-        {this.renderMIDISounds()}
+          <FooterContainer />
       </div>
+      {this.renderMIDISounds()}
+      </>
   );
 }
 }

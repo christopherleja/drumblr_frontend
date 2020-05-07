@@ -17,8 +17,6 @@ class Button extends React.Component {
 
 
     render(){
-        // let sampleIndex = this.props.sampleIndex
-        // let beatIndex = this.props.beatIndex
         return (         
         <div className={this.state.isActive ? "activeStep step" : "inactiveStep step"} onClick={this.handleClick}></div>
         )
