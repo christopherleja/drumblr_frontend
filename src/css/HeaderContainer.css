@@ -24,55 +24,9 @@
   text-align: left;
 }
 
-.DisplayContainer {
-  /* border: 2px solid red; */
-  order: 2;
-  display: flex;
-  margin: auto;
-  margin-top: 40px;
-  /* margin-left: 170px; */
-  height: 175px;
-  width: 400px;
-  background-image: linear-gradient(180deg, #5CB547 0%, #4C9038 100%);
-  border: 1px solid #979797;
-  border-radius: 8px;
-}
 
-.Sample {
-  display: flex;
-  flex-wrap: wrap;
-  width: 30%;
-  height: 45%;
-  margin-top: 5px;
-  /* margin: auto; */
-  border: 3px solid #000000;
-  font-family: 'tr-909regular';
-}
 
-.Tempo {
-  display: flex;
-  flex-wrap: wrap;
-  width: 30%;
-  height: 45%;
-  margin-bottom: 5px;
-  /* margin: auto; */
-  border: 3px solid #000000;
-  font-family: 'lcdnormal';
-}
 
-.Status {
-  display: flex;
-  width: 95%;
-  height: 90%;
-  margin: auto;
-  border: 3px solid #000000;
-  font-family: 'lcdnormal';
-  font-family: LCDNormal;;
-  color: #00541B;
-  font-size: 42px;
-  align-items: center;
-  padding-left: 0em;
-}
 
 .DialContainer {
   /* border: 2px solid red; */

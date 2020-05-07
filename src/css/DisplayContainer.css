@@ -1,0 +1,95 @@
+/* CONTAINERS */
+
+.DisplayContainer {
+  order: 2;
+  display: flex;
+  margin: auto;
+  height: 11em;
+  width: 25em;
+  border: 1px solid #979797;
+  border-radius: 8px;
+  background-image: linear-gradient(180deg, #5CB547 0%, #4C9038 100%);
+}
+
+.LCD {
+  border: 1px solid red;
+  margin: auto;
+  font-family: 'lcdnormal';
+  color: #00541B;
+  border: 3px solid #000000;
+  font-size: 42px;
+  height: 92%;
+  width: 96%;
+}
+
+.Status {
+  margin-top: .2em;
+  padding-bottom: .2em;
+  border-bottom: 3px solid black;
+  width: 100%;
+  display: flex;
+}
+
+.TempoContainer {
+  /* border: 1px solid red; */
+  border-right: 3px solid black;
+  flex-direction: row;
+  width: 30%;
+  height: 42%;
+}
+
+.Tempo {
+  /* border: 1px solid red; */
+  border-bottom: 3px solid black;
+  order: 1;
+  width: 100%;
+  color: black;
+  font-family: Menlo;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: .05em;
+}
+
+.BPM {
+  order: 2;
+  display: flex;
+  font-size: 38px;
+}
+
+.IncreaseBPM {
+  /* border: 1px solid red; */
+  margin: auto;
+  margin-right: .1em;
+  width: 20%;
+  margin-top: -.1em;
+  font-size: 56px;
+}
+
+.BPMValue {
+  /* border: 1px solid red; */
+  /* display: flex; */
+  margin: auto;
+  width: 60%;
+  margin-top: .06em;
+}
+
+.DecreaseBPM {
+  /* border: 1px solid red; */
+  margin: auto;
+  margin-left: .1em;
+  width: 20%;
+  margin-top: -.3em;
+  font-size: 56px;
+}
+
+.Sample {
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 45%;
+  margin-top: 5px;
+  /* margin: auto; */
+  border: 3px solid #000000;
+  font-family: 'tr-909regular';
+}

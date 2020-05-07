@@ -9,6 +9,7 @@ import './css/HeaderContainer.css';
 import './css/NavBar.css';
 import './css/SampleContainer.css';
 import './css/FooterContainer.css';
+import './css/DisplayContainer.css';
 
 const URL = 'http://localhost:3000';
 
@@ -81,15 +82,15 @@ export default class App extends React.Component {
   handleAdjustBPM = (e) => {
     this.setState({
       bpm: e
-    }, console.log(this.state.bpm))
+    })
   }
 
   render() {
     return (
       <>
         <div className="App">
-            <HeaderContainer />
-            <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM}/>
+            <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} />
+            <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
             <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
             <FooterContainer />
         </div>
