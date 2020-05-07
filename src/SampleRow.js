@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SampleBtnIcon from './SampleBtnIcon';
 import Button from './Button';
 
 export class SampleRow extends Component {
@@ -15,8 +16,11 @@ export class SampleRow extends Component {
     // console.log("Sample Row", this.props.appProps)
     // console.log("Sample row hanlders", this.props.toggleDrum)
     return (
-      <div className="buttonRowContainer">  
-        {this.getDrumButtons()}
+      <div className="SampleRow">
+        <SampleBtnIcon /> 
+        <div className="buttonRowContainer">
+          {this.getDrumButtons()}
+        </div>
       </div>
     )
   }
