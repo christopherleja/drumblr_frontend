@@ -137,6 +137,8 @@
 
 .NavBar {
   display: flex;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
   height: 5%;
   border: 1px solid red;
 }
@@ -158,6 +160,41 @@
 .buttonRowContainer {
   display: flex;
   height: 100%;
+}
+
+.NavBarBtn {
+  align-items: center;
+  margin-right: .4em;
+  padding: .1rem;
+  height: 1.5em;
+  width: 5em;
+  background-image: radial-gradient(50% 320%, #EAF5FF 0%, #8B9195 200%);
+  border: 1px solid #979797;
+  border-radius: 29px;
+}
+
+.PlayBtn {
+  align-items: center;
+  margin-right: .4em;
+  padding: .1rem;
+  height: 1.5em;
+  width: 5em;
+  background-image: radial-gradient(50% 320%, #EAFFED 0%, #53DA5B 200%);
+  border: 2px solid #92E491;
+  box-shadow: 0 0 4px 2px rgba(106,211,100,0.50);
+  border-radius: 29px;
+}
+
+.PauseBtn {
+  align-items: center;
+  margin-right: .4em;
+  padding: .1rem;
+  height: 1.5em;
+  width: 5em;
+  background-image: radial-gradient(50% 320%, #FFEAEA 0%, #DA5353 200%);
+  border: 2px solid #E49191;
+  box-shadow: 0 0 4px 2px rgba(211,100,100,0.50);
+  border-radius: 29px;
 }
 
 /* 

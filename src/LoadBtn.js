@@ -4,9 +4,7 @@ export default class LoadBtn extends React.Component {
 
   render() {
     return (
-      <div className="LoadBtn">
-        <button>Load</button>
-      </div>
+      <div className="NavBarBtn">Load</div>
     )
   }
 
