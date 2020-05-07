@@ -20,11 +20,12 @@
   flex-direction: column;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 25px;
+  margin-top: 3em;
   height: 900px;
   width: 900px;
   background-image: linear-gradient(180deg, #7B8795 0%, #EAEAEA 2%, #9DADBE 3%, #8C9EB4 8%, #8A9BAD 96%, #8AA1B1 96%, #68727E 97%, #98A2AB 100%);
   border-radius: 11px;
+  box-shadow: 12px 14px 17px 0 rgba(0,0,0,0.80);
 }
 
 .BtnLabel {

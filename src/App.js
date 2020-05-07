@@ -87,13 +87,13 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-      <div className="App">
-          <HeaderContainer />
-          <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM}/>
-          <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
-          <FooterContainer />
-      </div>
-      {this.renderMIDISounds()}
+        <div className="App">
+            <HeaderContainer />
+            <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM}/>
+            <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
+            <FooterContainer />
+        </div>
+        {this.renderMIDISounds()}
       </>
   );
 }
