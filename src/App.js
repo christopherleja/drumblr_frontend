@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom'
 import MIDISounds from 'midi-sounds-react';
 import HeaderContainer from './HeaderContainer';
 import NavBar from './NavBar';
@@ -87,15 +88,20 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <>
-        <div className="App">
+      <Switch>
+        <Route exact path="/" render={() => 
+          <div className="App">
+          <div className="drumblr">
             <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} />
             <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
             <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
             <FooterContainer />
+          </div>
+          {this.renderMIDISounds()}
         </div>
-        {this.renderMIDISounds()}
-      </>
-  );
-}
+        } />
+        <Route path="/beats/:id" render={routeProps => <SampleContainer {...routeProps} app={this.state}/>} />
+      </Switch>
+    )
+  }
 }
