@@ -62,7 +62,7 @@ export default class App extends React.Component {
                   
 	playLoop = () => {
     this.fillBeat();
-    this.midiSounds.startPlayLoop(this.beats, 120, 1/16);
+    this.midiSounds.startPlayLoop(this.beats, this.state.bpm, 1/16);
   }
   
 	stopLoop = () => {
@@ -76,14 +76,20 @@ export default class App extends React.Component {
       tracks: a
     });
     this.fillBeat();
-	}
+  }
+  
+  handleAdjustBPM = (e) => {
+    this.setState({
+      bpm: e
+    }, console.log(this.state.bpm))
+  }
 
   render() {
     return (
       <>
       <div className="App">
           <HeaderContainer />
-          <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} bpm={this.state.bpm} />
+          <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM}/>
           <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
           <FooterContainer />
       </div>

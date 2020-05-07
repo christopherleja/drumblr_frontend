@@ -2,13 +2,6 @@ import React from 'react';
 import SampleRow from './SampleRow';
 
 export default class SampleContainer extends React.Component{
-
-    // Current working code that renders sequence buttons
-    renderButtonRows = () => {
-        return this.props.app.tracks.map((drumObj, index) => {
-                return <SampleRow drumObj={drumObj} drumIndex={index} sequenceThisNote={this.props.sequenceThisNote} togglePlaying={this.props.togglePlaying}/>
-        })
-    }
     
     render(){
         return (

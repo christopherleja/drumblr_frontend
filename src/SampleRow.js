@@ -13,8 +13,6 @@ export class SampleRow extends Component {
       }
 
   render() {
-    // console.log("Sample Row", this.props.appProps)
-    // console.log("Sample row hanlders", this.props.toggleDrum)
     return (
       <div className="SampleRow">
         <SampleBtnIcon /> 
