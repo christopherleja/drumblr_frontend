@@ -17,6 +17,7 @@ export class SampleRow extends Component {
       <div className="SampleRow">
         <SampleBtnIcon name={this.props.name} />
         <div className="buttonRowContainer">
+        
         <div className="BeatCount">1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4</div>
           {this.getDrumButtons()}
         </div>
