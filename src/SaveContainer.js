@@ -21,14 +21,14 @@ export default class SaveContainer extends React.Component {
   render() {
     return (
       <div className="SaveContainer">
-        <div className="Tempo">TEMPO</div>
-        <div className="BPM">
-          <div className="DecreaseBPM" onClick={this.handleDecrease}>-</div>
-          <div className="BPMValue" onScroll={() => this.handleScroll} >{this.props.bpm}</div>
-          <div className="IncreaseBPM" onClick={this.handleIncrease} value={1}>+</div>
-        </div>
+        <div className="Presets">PRESET NAME</div>
+        <input className="PresetsValue" type="text" onChange={this.props.handleOnChange} value={this.props.value}></input>
       </div>
     )
   }
 
 }
+
+// <input id="myText" type="text" style="border:none; background: transparent; outline: 0;"/>
+// handleSave={this.props.handleSave}
+// handleOnChange={this.props.handleOnChange}

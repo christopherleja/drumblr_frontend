@@ -12,6 +12,7 @@ export default class HeaderContainer extends React.Component {
           adjustBPM={this.props.adjustBPM} 
           handleSave={this.props.handleSave}
           handleOnChange={this.props.handleOnChange}
+          value={this.props.value}
         />
 
         <LogoContainer midiSounds={this.props.midiSounds} />

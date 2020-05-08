@@ -149,6 +149,7 @@ export default class App extends React.Component {
                   midiSounds={this.renderMIDISounds()}
                   handleSave={this.handleSave}
                   handleOnChange={this.handleOnChange} 
+                  value={this.state.name}
                 />
 
                 <NavBar playLoop={this.playLoop} 
@@ -165,9 +166,9 @@ export default class App extends React.Component {
 
               </div>
 
-              <form id="nameForm">
+              {/* <form id="nameForm">
                 <input type="text" name="beatName" onChange={this.handleOnChange} value={this.state.name} />
-              </form>
+              </form> */}
             </>
           )
         }} />

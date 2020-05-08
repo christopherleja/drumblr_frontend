@@ -16,6 +16,7 @@ export default class DisplayContainer extends React.Component {
 
           <SaveContainer handleSave={this.props.handleSave}
             handleOnChange={this.props.handleOnChange}
+            value={this.props.value}
           />
 
         </div>
