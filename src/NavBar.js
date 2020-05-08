@@ -18,8 +18,8 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div className="NavBar">
+        {/* <LoadBtn clearAll={this.props.clearAll} /> */}
         <SaveBtn handleSave={this.props.handleSave} />
-        <LoadBtn clearAll={this.props.clearAll} />
         <PlayPauseBtn playLoop={this.props.playLoop} stopLoop={this.props.stopLoop} />
       </div>
     )

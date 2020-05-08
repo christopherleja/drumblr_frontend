@@ -84,16 +84,16 @@ export default class App extends React.Component {
     this.fillBeat();
   }
 
-  clearAll = () => {
-    this.setState({
-      tracks:[
-      [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
-      [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
-      [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
-      [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-      ]
-    }, () => console.log(this.state.tracks));
-  }
+  // clearAll = () => {
+  //   this.setState({
+  //     tracks:[
+  //     [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+  //     [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+  //     [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+  //     [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+  //     ]
+  //   }, () => console.log(this.state.tracks));
+  // }
   
   handleAdjustBPM = (e) => {
     this.setState({
@@ -117,7 +117,7 @@ export default class App extends React.Component {
           <Link to="/beats">Browse</Link>
           <div className="App">
               <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} midiSounds={this.renderMIDISounds()} />
-              <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} clearAll={this.clearAll} />
+              <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
               <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
               <FooterContainer />
           </div>
