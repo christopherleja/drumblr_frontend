@@ -4,13 +4,13 @@ export default class TempoContainer extends React.Component {
 
   handleIncrease = () => {
     let currentBPM = this.props.bpm
-    let incrementedBPM = currentBPM += 1;
+    let incrementedBPM = currentBPM += 5;
     this.props.adjustBPM(incrementedBPM)
   }
 
   handleDecrease = () => {
     let currentBPM = this.props.bpm
-    let decrementedBPM = currentBPM -= 1;
+    let decrementedBPM = currentBPM -= 5;
     this.props.adjustBPM(decrementedBPM)
   }
 
