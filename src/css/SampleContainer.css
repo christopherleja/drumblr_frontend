@@ -24,6 +24,21 @@
   height: 20%;
 }
 
+.BeatCount {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 60%;
+  margin-top: .1em;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 14px;
+  color: rgb(189, 192, 199);
+  text-align: justify;
+  padding-left: 3em;
+  word-spacing: 1.93em;
+  position: absolute;
+}
+
 .buttonRowContainer {
   display: flex;
   height: 60px;
