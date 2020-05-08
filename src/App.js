@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
   state = {
     bpm: 120,
-    name: '',
+    name: 'unsaved',
     sample1: 3,
     sample2: 22,
     sample3: 17,
@@ -110,24 +110,20 @@ export default class App extends React.Component {
       sample3: this.state.sample3,
       sample4: this.state.sample4,
       tracks: this.state.tracks
-      }
-    fetch(`${URL}` + '/beats', {
+    }    
+    fetch(URL + '/beats', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(object),
     })
-      .then(response => response.json())
-      .then(beat => {
-        console.log(beat)
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
+    .then(response => response.json())
+    .then(beat => {
+      console.log(beat)
+    })
+  }
 
-  
   handleOnChange = (e) => {
     console.log(e.target.value)
     this.setState({
@@ -136,7 +132,7 @@ export default class App extends React.Component {
   }
 
   handleFetch = (id) => {
-    fetch(URL + `/beats/${id}`)
+  fetch(URL + `/beats/${id}`)
   .then(response => response.json())
   .then(beat => {
       this.setState({
@@ -158,22 +154,38 @@ export default class App extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={() => 
-        <>
-          <Link to="/">Home</Link>
-          <Link to="/beats">Browse</Link>
-          <div className="App">
-              <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} midiSounds={this.renderMIDISounds()} />
-              <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
-              <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
-              <FooterContainer handleFetch={this.handleFetch}/>
-          </div>
-          <form id="nameForm">
-            <input type="text" name="beatName" onChange={this.handleOnChange} value={this.state.name} />
-          </form>
-          
-        </>
-        } />
+        <Route exact path="/" render={() => {
+          return (
+            <>
+              <Link to="/">Home</Link>
+              <Link to="/beats">Browse</Link>
+
+              <div className="App">
+
+                <HeaderContainer bpm={this.state.bpm} 
+                  adjustBPM={this.handleAdjustBPM} 
+                  midiSounds={this.renderMIDISounds()}
+                  handleSave={this.handleSave}
+                  handleOnChange={this.handleOnChange} 
+                  value={this.state.name}
+                />
+
+                <NavBar playLoop={this.playLoop} 
+                  stopLoop={this.stopLoop} 
+                  handleSave={this.handleSave}
+                  handleOnChange={this.handleOnChange}
+                />
+
+                <SampleContainer app={this.state} 
+                  toggleDrum={this.toggleDrum} 
+                />
+
+                <FooterContainer />
+
+              </div>
+            </>
+          )
+        }} />
         <Route exact path="/beats" render={() => <BeatsList/>}/>
         <Route path="/beats/:id" render={routeProps => <SampleContainer {...routeProps} app={this.state}/>} />
       </Switch>

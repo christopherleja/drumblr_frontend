@@ -8,8 +8,15 @@ export default class HeaderContainer extends React.Component {
   render() {
     return (
       <div className="HeaderContainer">
-        <DisplayContainer bpm={this.props.bpm} adjustBPM={this.props.adjustBPM} />
+        <DisplayContainer bpm={this.props.bpm} 
+          adjustBPM={this.props.adjustBPM} 
+          handleSave={this.props.handleSave}
+          handleOnChange={this.props.handleOnChange}
+          value={this.props.value}
+        />
+
         <LogoContainer midiSounds={this.props.midiSounds} />
+
         <DialContainer />
       </div>
     )
