@@ -110,9 +110,7 @@ export default class App extends React.Component {
       sample3: this.state.sample3,
       sample4: this.state.sample4,
       tracks: this.state.tracks
-    }
-    console.log(object.tracks.forEach((track, index) => console.log(track[index])))
-    
+    }    
     fetch(URL + '/beats', {
       method: "POST",
       headers: {
@@ -132,6 +130,26 @@ export default class App extends React.Component {
       name: e.target.value
     })
   }
+
+  handleFetch = (id) => {
+  fetch(URL + `/beats/${id}`)
+  .then(response => response.json())
+  .then(beat => {
+      this.setState({
+        bpm: beat.bpm,
+        name: beat.name,
+        sample1: beat.sample1,
+        sample2: beat.sample2,
+        sample3: beat.sample3,
+        sample4: beat.sample4,
+        tracks: beat.tracks,
+      })
+  }
+  )
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
 
   render() {
     return (

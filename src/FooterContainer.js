@@ -2,15 +2,19 @@ import React from 'react';
 
 export default class FooterContainer extends React.Component {
 
+  handleClick = (e) => {
+    this.props.handleFetch(e.target.id)
+  }
+
   render() {
     return (
       <div className="FooterContainer">
         <div className="PresetContainer">
-          <div className="Preset"><a href="http://localhost:3001/beats">Preset 1</a></div>
-          <div className="Preset"><a href="http://localhost:3001/beats">Preset 2</a></div>
-          <div className="Preset"><a href="http://localhost:3001/beats">Preset 3</a></div>
-          <div className="Preset"><a href="http://localhost:3001/beats">Preset 4</a></div>
-          <div className="Preset"><a href="http://localhost:3001/beats">Preset 5</a></div>
+          <div className="Preset" id={1} onClick={this.handleClick}>Preset 1</div>
+          <div className="Preset" id={2} onClick={this.handleClick}>Preset 2</div>
+          <div className="Preset" id={3} onClick={this.handleClick}>Preset 3</div>
+          <div className="Preset" id={4} onClick={this.handleClick}>Preset 4</div>
+          <div className="Preset" id={5} onClick={this.handleClick}>Preset 5</div>
         </div>
         <div className="PresetBG">
           <p>Presets</p>
