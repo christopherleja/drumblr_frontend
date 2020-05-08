@@ -3,6 +3,7 @@ import SaveBtn from './SaveBtn';
 import LoadBtn from './LoadBtn';
 import PlayPauseBtn from './PlayPauseBtn';
 
+
 export default class NavBar extends React.Component {
   state = {
     start: false
@@ -17,8 +18,8 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div className="NavBar">
+        {/* <LoadBtn clearAll={this.props.clearAll} /> */}
         <SaveBtn handleSave={this.props.handleSave} />
-        <LoadBtn />
         <PlayPauseBtn playLoop={this.props.playLoop} stopLoop={this.props.stopLoop} />
       </div>
     )

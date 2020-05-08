@@ -9,7 +9,7 @@ export default class HeaderContainer extends React.Component {
     return (
       <div className="HeaderContainer">
         <DisplayContainer bpm={this.props.bpm} adjustBPM={this.props.adjustBPM} />
-        <LogoContainer />
+        <LogoContainer midiSounds={this.props.midiSounds} />
         <DialContainer />
       </div>
     )

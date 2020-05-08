@@ -5,12 +5,15 @@ import HeaderContainer from './HeaderContainer';
 import NavBar from './NavBar';
 import SampleContainer from './SampleContainer';
 import FooterContainer from './FooterContainer';
+import BeatsList from './BeatsList'
 import './css/App.css';
 import './css/HeaderContainer.css';
 import './css/NavBar.css';
 import './css/SampleContainer.css';
 import './css/FooterContainer.css';
 import './css/DisplayContainer.css';
+import { Link } from 'react-router-dom'
+
 
 
 const URL = 'http://localhost:3000';
@@ -19,11 +22,11 @@ export default class App extends React.Component {
 
   state = {
     bpm: 120,
-    name: 'test',
+    name: '',
     sample1: 3,
     sample2: 22,
-    sample3: 26,
-    sample4: 35,
+    sample3: 17,
+    sample4: 36,
     tracks:[
       [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
       [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
@@ -80,6 +83,17 @@ export default class App extends React.Component {
     });
     this.fillBeat();
   }
+
+  // clearAll = () => {
+  //   this.setState({
+  //     tracks:[
+  //     [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+  //     [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+  //     [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+  //     [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+  //     ]
+  //   }, () => console.log(this.state.tracks));
+  // }
   
   handleAdjustBPM = (e) => {
     this.setState({
@@ -109,6 +123,11 @@ export default class App extends React.Component {
       .then(beat => {
         console.log(beat)
       })
+  handleOnChange = (e) => {
+    console.log(e.target.value)
+    this.setState({
+      name: e.target.value
+    })
   }
 
   render() {
@@ -116,15 +135,21 @@ export default class App extends React.Component {
       <Switch>
         <Route exact path="/" render={() => 
         <>
+          <Link to="/">Home</Link>
+          <Link to="/beats">Browse</Link>
           <div className="App">
-              <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} />
+              <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} midiSounds={this.renderMIDISounds()} />
               <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
               <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
               <FooterContainer />
           </div>
-          {this.renderMIDISounds()}
+          <form id="nameForm">
+            <input type="text" name="beatName" onChange={this.handleOnChange} value={this.state.name} />
+          </form>
+          
         </>
         } />
+        <Route exact path="/beats" render={() => <BeatsList/>}/>
         <Route path="/beats/:id" render={routeProps => <SampleContainer {...routeProps} app={this.state}/>} />
       </Switch>
     )

@@ -1,6 +1,7 @@
 /* CONTAINERS */
 
 .sampleContainer {
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   font-family: Menlo;
@@ -16,6 +17,7 @@
 }
 
 .SampleRow {
+  /* border: 1px solid red; */
   margin: auto;
   justify-content: space-evenly;
   display: flex;
@@ -23,7 +25,9 @@
   height: 20%;
 }
 
+
 .buttonRowContainer {
+  /* border: 1px solid red; */
   display: flex;
   height: 60px;
   width: 87%;
@@ -31,6 +35,22 @@
   background-image: linear-gradient(0deg, rgba(216,216,216,0.00) 62%, #212227 62%);
   border: 2px solid #282C2F;
   border-radius: 9px;
+  position: relative;
+}
+
+.BeatCount {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 100%;
+  margin-top: .1em;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 14px;
+  color: rgb(189, 192, 199);
+  text-align: justify;
+  padding-left: 3em;
+  word-spacing: 1.93em;
+  position: absolute;
 }
 
 /* BUTTONS */
@@ -53,7 +73,8 @@
   text-align: center;
   margin: auto;
   text-transform: uppercase;
-  color: #ffffff;
+  /* color: #ffffff; */
+  color: rgb(198, 209, 228);
   font-size: 12px;
 }
 
