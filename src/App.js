@@ -5,6 +5,7 @@ import HeaderContainer from './HeaderContainer';
 import NavBar from './NavBar';
 import SampleContainer from './SampleContainer';
 import FooterContainer from './FooterContainer';
+import BeatsList from './BeatsList'
 import './css/App.css';
 import './css/HeaderContainer.css';
 import './css/NavBar.css';
@@ -101,6 +102,7 @@ export default class App extends React.Component {
           {this.renderMIDISounds()}
         </>
         } />
+        <Route exact path="/beats" render={() => <BeatsList/>}/>
         <Route path="/beats/:id" render={routeProps => <SampleContainer {...routeProps} app={this.state}/>} />
       </Switch>
     )
