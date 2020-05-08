@@ -105,10 +105,10 @@ export default class App extends React.Component {
           <Link to="/">Home</Link>
           <Link to="/beats">Browse</Link>
           <div className="App">
-              <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} />
+              <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} midiSounds={this.renderMIDISounds()} />
               <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
               <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
-              <FooterContainer midiSounds={this.renderMIDISounds()} />
+              <FooterContainer />
           </div>
           <form id="nameForm">
             <input type="text" name="beatName" onChange={this.handleOnChange} value={this.state.name} />

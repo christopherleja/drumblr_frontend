@@ -5,7 +5,10 @@ export default class LogoContainer extends React.Component {
   render() {
     return (
       <div className="LogoContainer">
-        DRUMBLR
+        <div className="DRUMBLRLogo">
+          DRUMBLR
+        </div>
+        <div className="MIDISoundsLogo">{this.props.midiSounds}</div>
       </div>
     )
   }
