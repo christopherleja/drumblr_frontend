@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
   state = {
     bpm: 120,
-    name: '',
+    name: 'unsaved',
     sample1: 3,
     sample2: 22,
     sample3: 17,
@@ -165,10 +165,6 @@ export default class App extends React.Component {
                 <FooterContainer />
 
               </div>
-
-              {/* <form id="nameForm">
-                <input type="text" name="beatName" onChange={this.handleOnChange} value={this.state.name} />
-              </form> */}
             </>
           )
         }} />
