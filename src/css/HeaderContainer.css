@@ -30,13 +30,28 @@
 
 .DRUMBLRLogo {
   /* border: 2px solid red; */
-  height: 30%;
+  height: 10%;
   width: 100%;
+}
+
+.ModelLogo {
+  /* border: 2px solid red; */
+  display: flex;
+  height: 35%;
+  width: 100%;
+}
+
+.ModelLogo h1 {
+  display: flex;
+  margin-top: 0em;
+  font-size: 46px;
+  font-family: MuktaMahee-ExtraBold;
+  color: #057DBE;
 }
 
 .MIDISoundsLogo {
   /* border: 2px solid red; */
-  height: 30%;
+  height: 40%;
   width: 100%;
 }
 
