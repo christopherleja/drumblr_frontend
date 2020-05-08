@@ -12,6 +12,7 @@ import './css/SampleContainer.css';
 import './css/FooterContainer.css';
 import './css/DisplayContainer.css';
 
+
 const URL = 'http://localhost:3000';
 
 export default class App extends React.Component {
@@ -90,15 +91,15 @@ export default class App extends React.Component {
     return (
       <Switch>
         <Route exact path="/" render={() => 
+        <>
           <div className="App">
-          <div className="drumblr">
-            <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} />
-            <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
-            <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
-            <FooterContainer />
+              <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} />
+              <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
+              <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
+              <FooterContainer />
           </div>
           {this.renderMIDISounds()}
-        </div>
+        </>
         } />
         <Route path="/beats/:id" render={routeProps => <SampleContainer {...routeProps} app={this.state}/>} />
       </Switch>
