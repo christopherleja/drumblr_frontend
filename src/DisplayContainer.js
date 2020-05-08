@@ -7,12 +7,6 @@ export default class DisplayContainer extends React.Component {
     status: "WELCOME TO DRUMBLR"
   }
 
-  updateStatus = (e) => {
-    this.setState({
-      status: e.target.value
-    })
-  }
-
   render() {
 
     return (

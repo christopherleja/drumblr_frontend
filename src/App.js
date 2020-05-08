@@ -119,7 +119,7 @@ export default class App extends React.Component {
       body: JSON.stringify(object),
     })
     .then(response => response.json())
-    .then(beat => {
+    .then((beat) => {
       console.log(beat)
     })
   }

@@ -22,7 +22,7 @@ export default class SaveContainer extends React.Component {
     return (
       <div className="SaveContainer">
         <div className="Presets">PRESET NAME</div>
-        <input className="PresetsValue" type="text" onChange={this.props.handleOnChange} maxlength="8" value={this.props.value}></input>
+        <input className="PresetsValue" type="text" onChange={this.props.handleOnChange} maxLength="8" value={this.props.value}></input>
       </div>
     )
   }
