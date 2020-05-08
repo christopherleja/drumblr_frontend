@@ -113,7 +113,7 @@ export default class App extends React.Component {
     }
     console.log(object.tracks.forEach((track, index) => console.log(track[index])))
     
-    fetch(`${URL}` + '/beats', {
+    fetch(URL + '/beats', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
