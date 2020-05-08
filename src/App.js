@@ -12,6 +12,8 @@ import './css/NavBar.css';
 import './css/SampleContainer.css';
 import './css/FooterContainer.css';
 import './css/DisplayContainer.css';
+import { Link } from 'react-router-dom'
+
 
 
 const URL = 'http://localhost:3000';
@@ -20,7 +22,7 @@ export default class App extends React.Component {
 
   state = {
     bpm: 120,
-    name: 'test',
+    name: '',
     sample1: 3,
     sample2: 22,
     sample3: 26,
@@ -88,17 +90,29 @@ export default class App extends React.Component {
     })
   }
 
+  handleOnChange = (e) => {
+    console.log(e.target.value)
+    this.setState({
+      name: e.target.value
+    })
+  }
+
   render() {
     return (
       <Switch>
         <Route exact path="/" render={() => 
         <>
+          <Link to="/">Home</Link>
+          <Link to="/beats">Browse</Link>
           <div className="App">
               <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} />
               <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
               <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
               <FooterContainer />
           </div>
+          <form id="nameForm">
+            <input type="text" name="beatName" onChange={this.handleOnChange} value={this.state.name} />
+          </form>
           {this.renderMIDISounds()}
         </>
         } />
