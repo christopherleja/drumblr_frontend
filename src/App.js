@@ -108,12 +108,12 @@ export default class App extends React.Component {
               <HeaderContainer bpm={this.state.bpm} adjustBPM={this.handleAdjustBPM} />
               <NavBar playLoop={this.playLoop} stopLoop={this.stopLoop} handleSave={this.handleSave} />
               <SampleContainer app={this.state} toggleDrum={this.toggleDrum} />
-              <FooterContainer />
+              <FooterContainer midiSounds={this.renderMIDISounds()} />
           </div>
           <form id="nameForm">
             <input type="text" name="beatName" onChange={this.handleOnChange} value={this.state.name} />
           </form>
-          {this.renderMIDISounds()}
+          
         </>
         } />
         <Route exact path="/beats" render={() => <BeatsList/>}/>
