@@ -87,6 +87,30 @@ export default class App extends React.Component {
     })
   }
 
+  handleSave = () => {
+    const object = {
+      bpm: this.state.bpm,
+      name: this.state.name,
+      sample1: this.state.sample1,
+      sample2: this.state.sample2,
+      sample3: this.state.sample3,
+      sample4: this.state.sample4,
+      tracks: this.state.tracks
+      }
+      console.log(object.tracks.forEach((track, index) => console.log(track[index])))
+    fetch(`${URL}` + '/beats', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(object),
+    })
+      .then(response => response.json())
+      .then(beat => {
+        console.log(beat)
+      })
+  }
+
   render() {
     return (
       <Switch>
