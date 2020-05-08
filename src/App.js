@@ -25,8 +25,8 @@ export default class App extends React.Component {
     name: '',
     sample1: 3,
     sample2: 22,
-    sample3: 26,
-    sample4: 35,
+    sample3: 17,
+    sample4: 36,
     tracks:[
       [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
       [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
