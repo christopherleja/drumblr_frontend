@@ -51,11 +51,24 @@
   padding-top: .14em;
   margin-bottom: 1.3em;
   align-content: center;
+  font-family: Menlo-BoldItalic;
+  text-transform: uppercase;
+  /* color: rgb(222, 226, 235); */
+  /* color: rgb(198, 209, 228); */
   color: rgb(70, 70, 70);
   background-image: radial-gradient(50% 150%, rgb(179, 189, 206) 50%, #8B96A9 200%);
   border: 2px solid rgb(134, 135, 139);
   border-radius: 29px;
   transition: 0.5s;
+}
+
+.Preset a {
+  font-family: Menlo-BoldItalic;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* color: rgb(222, 226, 235); */
+  /* color: rgb(198, 209, 228); */
+  color: rgb(70, 70, 70);
 }
 
 .Preset:hover {
