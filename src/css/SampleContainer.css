@@ -73,7 +73,8 @@
   text-align: center;
   margin: auto;
   text-transform: uppercase;
-  color: #ffffff;
+  /* color: #ffffff; */
+  color: rgb(198, 209, 228);
   font-size: 12px;
 }
 

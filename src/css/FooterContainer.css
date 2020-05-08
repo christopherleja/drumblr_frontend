@@ -7,7 +7,8 @@
   margin: auto;
   font-family: Menlo-BoldItalic;
   text-transform: uppercase;
-  color: rgb(222, 226, 235);
+  /* color: rgb(222, 226, 235); */
+  color: rgb(198, 209, 228);
   margin-bottom: 3em;
   width: 90%;
   height: 3.1em;
