@@ -3,6 +3,7 @@ import React from 'react';
 export default class FooterContainer extends React.Component {
 
   handleClick = (e) => {
+    console.log(e.target.id)
     this.props.handleFetch(e.target.id)
   }
 

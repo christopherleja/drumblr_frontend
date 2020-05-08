@@ -180,7 +180,7 @@ export default class App extends React.Component {
                   toggleDrum={this.toggleDrum} 
                 />
 
-                <FooterContainer />
+                <FooterContainer handleFetch={this.handleFetch} />
 
               </div>
             </>
