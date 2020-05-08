@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export class BeatsList extends Component {
 
@@ -20,11 +21,18 @@ export class BeatsList extends Component {
       // return loading component here if we wanna do that
     }
     return (
-      <ul id="beatList">
-        {this.state.listedBeats.map(beat => {
-          return <li>{beat.name}</li>
-        })}
-      </ul>
+      <>
+        <Link to="/">Home</Link>
+        <div id="beatList">
+          {this.state.listedBeats.map(beat => {
+            return(
+              <div className="card?">
+                <Link to={`/beats/${beat.id}`}>{beat.name}</Link>
+              </div>
+            ) 
+          })}
+        </div>
+      </>
     )
   }
 }

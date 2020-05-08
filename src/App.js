@@ -187,7 +187,36 @@ export default class App extends React.Component {
           )
         }} />
         <Route exact path="/beats" render={() => <BeatsList/>}/>
-        <Route path="/beats/:id" render={routeProps => <SampleContainer {...routeProps} app={this.state}/>} />
+        <Route path="/beats/:id" render={routeProps => 
+          <>
+            <Link to="/">Home</Link>
+            <Link to="/beats">Browse</Link>
+
+            <div className="App">
+
+              <HeaderContainer bpm={this.state.bpm} 
+                adjustBPM={this.handleAdjustBPM} 
+                midiSounds={this.renderMIDISounds()}
+                handleSave={this.handleSave}
+                handleOnChange={this.handleOnChange} 
+                value={this.state.name}
+              />
+
+              <NavBar playLoop={this.playLoop} 
+                stopLoop={this.stopLoop} 
+                handleSave={this.handleSave}
+                handleOnChange={this.handleOnChange}
+              />
+
+              <SampleContainer {...routeProps} app={this.state} 
+                toggleDrum={this.toggleDrum} 
+              />
+
+              <FooterContainer handleFetch={this.handleFetch} />
+
+            </div>
+          </>
+        } />
       </Switch>
     )
   }
